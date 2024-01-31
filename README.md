@@ -24,3 +24,5 @@ A bot will then validate the content of your PR.
 | `library`   | String   | The target library                                                                                                                                                                                              | JDK, JDA, BotCommands |
 | `title`     | String   | The title of the example                                                                                                                                                                                        |                       |
 | `targets`   | String[] | The targets of this example, can be empty, may be a simple class name, a class + method name, or a full signature<br/> A class + method name, such as `JDA#queue`, will apply to every overload of that method. |                       |
+
+**Note for examples using the `Kotlin` language:** The code snippets can use JDA-KTX.
