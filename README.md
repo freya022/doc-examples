@@ -20,7 +20,7 @@ A bot will then validate the content of your PR.
 | Name        | Type     | Description                                                                                         | Choices               |
 |-------------|:---------|-----------------------------------------------------------------------------------------------------|-----------------------|
 | `file`      | String   | The file name of the message content                                                                |                       |
-| `languages` | String[] | Array of supported languages                                                                        | Java, Kotlin          |
+| `languages` | String[] | Array of supported languages                                                                        | Any, Java, Kotlin     |
 | `library`   | String   | The target library                                                                                  | JDK, JDA, BotCommands |
 | `title`     | String   | The title of the example                                                                            |                       |
 | `targets`   | String[] | The targets of this example, may be a simple class name, a class + method name, or a full signature |                       |
