@@ -7,7 +7,7 @@ A repository of code examples for various languages and libraries, served by [Do
 The [index file](index.conf) must be edited to add code examples,
 it essentially is an array with an element per message file.
 
-Each message file must be stored at: `examples/[Library]/[Language]/[File]`
+Each message file must be stored at: `examples/[Library]/[Name]/[Language].md`
 
 ## Contributing
 Before making a PR, check that your message is well formatted on Discord.
@@ -19,7 +19,7 @@ A bot will then validate the content of your PR.
 
 | Name        | Type     | Description                                                                                                                                                                                                     | Choices               |
 |-------------|:---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| `file`      | String   | The file name of the message content                                                                                                                                                                            |                       |
+| `name`      | String   | The name of the folder containing the files                                                                                                                                                                     |                       |
 | `languages` | String[] | Array of supported languages                                                                                                                                                                                    | Any, Java, Kotlin     |
 | `library`   | String   | The target library                                                                                                                                                                                              | JDK, JDA, BotCommands |
 | `title`     | String   | The title of the example                                                                                                                                                                                        |                       |
