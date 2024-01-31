@@ -17,12 +17,10 @@ A bot will then validate the content of your PR.
 
 ### Example object
 
-| Name        | Type     | Description                                                                                         | Choices               |
-|-------------|:---------|-----------------------------------------------------------------------------------------------------|-----------------------|
-| `file`      | String   | The file name of the message content                                                                |                       |
-| `languages` | String[] | Array of supported languages                                                                        | Any, Java, Kotlin     |
-| `library`   | String   | The target library                                                                                  | JDK, JDA, BotCommands |
-| `title`     | String   | The title of the example                                                                            |                       |
-| `targets`   | String[] | The targets of this example, may be a simple class name, a class + method name, or a full signature |                       |
-
-**Note:** A class + method name, such as `JDA#queue`, will apply to every overload of that method.
+| Name        | Type     | Description                                                                                                                                                                                                     | Choices               |
+|-------------|:---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| `file`      | String   | The file name of the message content                                                                                                                                                                            |                       |
+| `languages` | String[] | Array of supported languages                                                                                                                                                                                    | Any, Java, Kotlin     |
+| `library`   | String   | The target library                                                                                                                                                                                              | JDK, JDA, BotCommands |
+| `title`     | String   | The title of the example                                                                                                                                                                                        |                       |
+| `targets`   | String[] | The targets of this example, can be empty, may be a simple class name, a class + method name, or a full signature<br/> A class + method name, such as `JDA#queue`, will apply to every overload of that method. |                       |
