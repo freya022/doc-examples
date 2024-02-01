@@ -4,7 +4,7 @@ A repository of code examples for various languages and libraries, served by [Do
 
 ## How it works
 
-The [index file](index.conf) must be edited to add code examples,
+The [index file](index.json) must be edited to add code examples,
 it essentially is an array with an element per message file.
 
 Each message file must be stored at: `examples/[Library]/[Name]/[Language].md`
