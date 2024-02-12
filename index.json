@@ -13,5 +13,18 @@
       "JDA#updateCommands",
       "Guild#updateCommands"
     ]
+  },
+  {
+    "name": "Slash Command Handling",
+    "languages": [
+      "Java"
+    ],
+    "library": "JDA",
+    "title": "Slash Command Handling",
+    "targets": [
+      "SlashCommandInteractionEvent",
+      "CommandData",
+      "JDA#updateCommands"
+    ]
   }
 ]
