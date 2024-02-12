@@ -23,7 +23,7 @@
     "title": "Slash Command Handling",
     "targets": [
       "SlashCommandInteractionEvent",
-      "CommandData",
+      "SlashCommandData",
       "JDA#updateCommands"
     ]
   }
