@@ -1,11 +1,10 @@
 # Doc examples
+A repository of code examples for various languages and libraries,
+served by [Doxxy](https://github.com/freya022/Doxxy).
 
-A repository of code examples for various languages and libraries, served by [Doxxy](https://github.com/freya022/Doxxy).
-
-## How it works
-
+## Indexing examples
 The [index file](index.json) must be edited to add code examples,
-it essentially is an array with an element per message file.
+each element describes one example.
 
 Each message file must be stored at: `examples/[Library]/[Name]/[Language].md`
 
@@ -14,6 +13,7 @@ Before making a PR, check that your message is well formatted on Discord.
 A bot will then validate the content of your PR.
 
 ## Schema
+Property names suffixed with `?` are optional, while types suffixed with `?` are nullable.
 
 ### Example object
 
