@@ -21,6 +21,26 @@
     ],
     "library": "JDA",
     "title": "Slash Command Handling",
+    "parts": [
+      {
+        "fileName": "Start",
+        "label": "Introduction",
+        "emoji": "U+2044",
+        "description": "Covers the basic interface & an implementation of a simple slash command."
+      },
+      {
+        "fileName": "Part2",
+        "label": "Command loading & registration",
+        "emoji": "U+27F3",
+        "description": "Loads the commands & registers them to the JDA instance."
+      },
+      {
+        "fileName": "Part3",
+        "label": "Listener & Command Execution",
+        "emoji": "U+1F916",
+        "description": "Covers the listener registration & command execution."
+      }
+    ],
     "targets": [
       "SlashCommandInteractionEvent",
       "SlashCommandData",
