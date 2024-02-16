@@ -23,6 +23,5 @@ public class Main {
     public ISlashCommand getCommand(@NotNull String key) {
         return this.commands.get(key);
     }
-```
 }
 ```
