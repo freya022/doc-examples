@@ -23,22 +23,22 @@
     "title": "Slash Command Handling",
     "parts": [
       {
-        "fileName": "Start",
-        "label": "Introduction",
+        "fileName": "Part1",
+        "label": "Creating commands",
         "emoji": "hammer",
-        "description": "Covers the basic interface & an implementation of a simple slash command."
+        "description": "Basic interface & an implementation of a simple slash command."
       },
       {
         "fileName": "Part2",
-        "label": "Command loading & registration",
+        "label": "Command loading & listening",
         "emoji": "arrows_counterclockwise",
-        "description": "Loads the commands & registers them to the JDA instance."
+        "description": "Updates the commands & listens to them using a events."
       },
       {
         "fileName": "Part3",
-        "label": "Listener & Command Execution",
+        "label": "Starting the bot using the command manager",
         "emoji": "robot",
-        "description": "Covers the listener registration & command execution."
+        "description": "Creates a bot instance, creates the commands and registers the command manager"
       }
     ],
     "targets": [

@@ -1,27 +1,48 @@
+Now that your command is done, we can create the class that will:
+* Hold the slash command objects
+* Update the slash commands on Discord once JDA loads any guild
+* Listen for slash command events and execute the right command
+
 ```java
-public class Main {
+public class SlashCommandManager extends ListenerAdapter {
     private final Map<String, ISlashCommand> commands = new HashMap<>();
+    private boolean updated = false;
 
-    public Main() {
-        // start jda instance here, alternatively main(String[] args) works too.
-        // command registration
-        this.loadCommands();
+    // Adds multiple commands to the map
+    public void addCommands(ISlashCommand... slashCommands) {
+        for (ISlashCommand slashCommand : slashCommands) {
+            CommandData commandData = slashCommand.getCommandData();
+            // Associate the command's name to the slash command object
+            commands.put(commandData.getName(), slashCommand);
+        }
     }
 
-    private void loadCommands() {
-        // here we need to add the command (with a name) to the map. So we can do:
-        this.commands.put("message", new MessageCommand()); // additionally, if you need the main JDA instance you can get it from the event or pass it into the constructor of command class.
+    // Listens for a GuildReadyEvent and then updates the global commands
+    // This will run multiple times, so we need to make sure it only runs once
+    @Override
+    public void onGuildReady(@NotNull GuildReadyEvent event) {
+        if (updated) return; // Return if already updated
+        updated = true;
 
-        // additionally, the commands also need to be registered on the JDA instance.    
-        final CommandListUpdateAction commands = this.jda.updateCommands();
-        this.commands.values().forEach(command -> commands.addCommands(command.getCommandData()));
-        commands.queue();
+        // Add the commands on the global scope
+        event.getJDA().updateCommands()
+                .addCommands(commands)
+                .queue();
     }
 
-    // if your main class extends ListenerAdapter then you can just access the map directly. Otherwise you will need this method to access it in a different class. 
-    @Nullable
-    public ISlashCommand getCommand(@NotNull String key) {
-        return this.commands.get(key);
+    @Override
+    public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
+        // Get our slash command by name
+        ISlashCommand slashCommand = commands.get(event.getName());
+        if (slashCommand == null) {
+            event.reply("This command was not found")
+                    .setEphemeral(true)
+                    .queue();
+            return;
+        }
+        
+        // The slash command exists with such name, execute it
+        slashCommand.execute(event);
     }
 }
 ```

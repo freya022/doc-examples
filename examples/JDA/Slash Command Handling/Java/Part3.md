@@ -1,21 +1,36 @@
-Lastly, we need a listener which listens to when a command is executed, we can do this inside a `ListenerAdapter` with another method in the main class.
-
-Listener (you will need to pass an instance of your main class into the listener class, to make sure that you have the `getCommand` method inside there):
+Finally, we can use our slash command manager, and add our first slash command:
 ```java
-// Do not forget to register this listener.
-public class SlashListener extends ListenerAdapter {
-    private final Main application;
+public class Bot {
+    private final JDA jda;
 
-    public SlashListener(@NotNull Main application) {
-        this.application = application;
+    private Bot() {
+        // Let's create our commands
+        final var messageCommand = new MessageCommand();
+
+        // Then register them
+        final var slashCommandManager = new SlashCommandManager();
+        slashCommandManager.addCommands(
+                messageCommand
+                // Can also add more
+        );
+
+        // Finally, create our JDA instance
+        jda = JDABuilder.createLight(token)
+                // Further configuration
+                // Add our slash command manager
+                .addEventListeners(slashCommandManager)
+                .build();
     }
 
-    @Override
-    public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
-        final ISlashCommand command = this.main.getCommand(event.getName());
-        if (command == null) return; // command was not registered in the loadCommands method
-        command.execute(event); // handles the slash command
+    // You should not have to get a JDA instance often,
+    // as they are given in every event.
+    @NotNull
+    public JDA getJDA() {
+        return jda;
+    }
+
+    public static void main(String[] args) {
+        new Bot();
     }
 }
 ```
-**Tip:** If your command reply takes longer than 3 seconds, consider deferring the event and edit your reply using the hook inside the `execute` method.
