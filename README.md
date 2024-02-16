@@ -33,9 +33,9 @@ Property names suffixed with `?` are optional, while types suffixed with `?` are
 
 ### Part object
 
-| Name           | Type    | Description                                                             |
-|----------------|---------|-------------------------------------------------------------------------|
-| `fileName`     | String  | The name of the file containing the example part, without the extension |
-| `label`        | String  | The select option's label                                               |
-| `emoji?`       | String? | The select option's emoji, can be an unicode emoji or any custom emoji  |
-| `description?` | String? | The select option's description                                         |
+| Name           | Type    | Description                                                                                                         |
+|----------------|---------|---------------------------------------------------------------------------------------------------------------------|
+| `fileName`     | String  | The name of the file containing the example part, without the extension                                             |
+| `label`        | String  | The select option's label                                                                                           |
+| `emoji?`       | String? | The select option's emoji, can be an unicode emoji, an alias or any custom emoji, all of these must be from Discord |
+| `description?` | String? | The select option's description                                                                                     |
