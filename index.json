@@ -25,13 +25,13 @@
       {
         "fileName": "Start",
         "label": "Introduction",
-        "emoji": "U+2044",
+        "emoji": "hammer",
         "description": "Covers the basic interface & an implementation of a simple slash command."
       },
       {
         "fileName": "Part2",
         "label": "Command loading & registration",
-        "emoji": "U+27F3",
+        "emoji": "arrows_counterclockwise",
         "description": "Loads the commands & registers them to the JDA instance."
       },
       {
