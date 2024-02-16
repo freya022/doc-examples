@@ -26,19 +26,19 @@
         "fileName": "Part1",
         "label": "Creating commands",
         "emoji": "hammer",
-        "description": "Basic interface & an implementation of a simple slash command."
+        "description": "Basic interface & implementation of a slash command"
       },
       {
         "fileName": "Part2",
         "label": "Command loading & listening",
         "emoji": "arrows_counterclockwise",
-        "description": "Updates the commands & listens to them using a events."
+        "description": "Updates the commands & listens to them using events"
       },
       {
         "fileName": "Part3",
         "label": "Starting the bot using the command manager",
         "emoji": "robot",
-        "description": "Creates a bot instance, creates the commands and registers the command manager"
+        "description": "Runs the bot with the commands and registers the command manager"
       }
     ],
     "targets": [
