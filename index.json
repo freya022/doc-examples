@@ -20,7 +20,7 @@
       "Java"
     ],
     "library": "JDA",
-    "title": "Slash Command Handling",
+    "title": "Slash command handling",
     "parts": [
       {
         "fileName": "Part1",
