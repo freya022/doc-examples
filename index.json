@@ -13,5 +13,38 @@
       "JDA#updateCommands",
       "Guild#updateCommands"
     ]
+  },
+  {
+    "name": "Slash Command Handling",
+    "languages": [
+      "Java"
+    ],
+    "library": "JDA",
+    "title": "Slash command handling",
+    "parts": [
+      {
+        "fileName": "Part1",
+        "label": "Creating commands",
+        "emoji": "hammer",
+        "description": "Basic interface & implementation of a slash command"
+      },
+      {
+        "fileName": "Part2",
+        "label": "Command loading & listening",
+        "emoji": "arrows_counterclockwise",
+        "description": "Updates the commands & listens to them using events"
+      },
+      {
+        "fileName": "Part3",
+        "label": "Starting the bot using the command manager",
+        "emoji": "robot",
+        "description": "Runs the bot with the commands and registers the command manager"
+      }
+    ],
+    "targets": [
+      "SlashCommandInteractionEvent",
+      "SlashCommandData",
+      "JDA#updateCommands"
+    ]
   }
 ]
