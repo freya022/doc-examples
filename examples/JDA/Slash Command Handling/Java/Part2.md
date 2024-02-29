@@ -26,7 +26,7 @@ public class SlashCommandManager extends ListenerAdapter {
 
         // Add the commands on the global scope
         event.getJDA().updateCommands()
-                .addCommands(commands)
+                .addCommands(commands.values().stream().map(ISlashCommand::getCommandData).toList())
                 .queue();
     }
 
