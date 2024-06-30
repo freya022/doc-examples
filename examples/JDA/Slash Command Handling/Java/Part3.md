@@ -15,7 +15,7 @@ public class Bot {
         );
 
         // Finally, create our JDA instance
-        this.jda = JDABuilder.createLight(token)
+        jda = JDABuilder.createLight(token)
                 // Further configuration
                 // Add our slash command manager
                 .addEventListeners(slashCommandManager)
@@ -26,7 +26,7 @@ public class Bot {
     // as they are given in every event.
     @NotNull
     public JDA getJDA() {
-        return this.jda;
+        return jda;
     }
 
     public static void main(String[] args) {
