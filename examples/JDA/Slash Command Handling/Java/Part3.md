@@ -5,17 +5,17 @@ public class Bot {
 
     private Bot() {
         // Let's create our commands
-        final var messageCommand = new MessageCommand();
+        final MessageCommand messageCommand = new MessageCommand();
 
         // Then register them
-        final var slashCommandManager = new SlashCommandManager();
+        final SlashCommandManager slashCommandManager = new SlashCommandManager();
         slashCommandManager.addCommands(
                 messageCommand
                 // Can also add more
         );
 
         // Finally, create our JDA instance
-        jda = JDABuilder.createLight(token)
+        this.jda = JDABuilder.createLight(token)
                 // Further configuration
                 // Add our slash command manager
                 .addEventListeners(slashCommandManager)
@@ -26,7 +26,7 @@ public class Bot {
     // as they are given in every event.
     @NotNull
     public JDA getJDA() {
-        return jda;
+        return this.jda;
     }
 
     public static void main(String[] args) {
