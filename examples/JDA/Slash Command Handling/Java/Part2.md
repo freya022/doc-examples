@@ -11,7 +11,7 @@ public class SlashCommandManager extends ListenerAdapter {
     // Adds multiple commands to the map
     public void addCommands(ISlashCommand... slashCommands) {
         for (ISlashCommand slashCommand : slashCommands) {
-            CommandData commandData = slashCommand.getCommandData();
+            final CommandData commandData = slashCommand.getCommandData();
             // Associate the command's name to the slash command object
             commands.put(commandData.getName(), slashCommand);
         }
@@ -21,8 +21,8 @@ public class SlashCommandManager extends ListenerAdapter {
     // This will run multiple times, so we need to make sure it only runs once
     @Override
     public void onGuildReady(@NotNull GuildReadyEvent event) {
-        if (this.updated) return; // Return if already updated
-        this.updated = true;
+        if (updated) return; // Return if already updated
+        updated = true;
 
         // Add the commands on the global scope
         event.getJDA().updateCommands()
@@ -33,7 +33,7 @@ public class SlashCommandManager extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
         // Get our slash command by name
-        ISlashCommand slashCommand = commands.get(event.getName());
+        final ISlashCommand slashCommand = commands.get(event.getName());
         if (slashCommand == null) {
             event.reply("This command was not found")
                     .setEphemeral(true)
