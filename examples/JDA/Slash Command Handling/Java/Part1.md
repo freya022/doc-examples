@@ -26,7 +26,6 @@ public class MessageCommand implements ISlashCommand {
         return Commands.slash("message", "Sends a message to the channel this was executed in.");
     }
 
-    @NotNull
     @Override
     public void execute(@NotNull SlashCommandInteractionEvent event) {
         event.reply("Hello").queue();

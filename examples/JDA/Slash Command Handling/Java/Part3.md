@@ -5,10 +5,10 @@ public class Bot {
 
     private Bot() {
         // Let's create our commands
-        final var messageCommand = new MessageCommand();
+        final MessageCommand messageCommand = new MessageCommand();
 
         // Then register them
-        final var slashCommandManager = new SlashCommandManager();
+        final SlashCommandManager slashCommandManager = new SlashCommandManager();
         slashCommandManager.addCommands(
                 messageCommand
                 // Can also add more
