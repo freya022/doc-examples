@@ -13,7 +13,7 @@ public class SlashCommandManager extends ListenerAdapter {
         for (ISlashCommand slashCommand : slashCommands) {
             CommandData commandData = slashCommand.getCommandData();
             // Associate the command's name to the slash command object
-            commands.put(commandData.getName(), slashCommand);
+            this.commands.put(commandData.getName(), slashCommand);
         }
     }
 
@@ -21,8 +21,8 @@ public class SlashCommandManager extends ListenerAdapter {
     // This will run multiple times, so we need to make sure it only runs once
     @Override
     public void onGuildReady(@NotNull GuildReadyEvent event) {
-        if (updated) return; // Return if already updated
-        updated = true;
+        if (this.updated) return; // Return if already updated
+        this.updated = true;
 
         // Add the commands on the global scope
         event.getJDA().updateCommands()
