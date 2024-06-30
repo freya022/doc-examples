@@ -13,7 +13,7 @@ public class SlashCommandManager extends ListenerAdapter {
         for (ISlashCommand slashCommand : slashCommands) {
             CommandData commandData = slashCommand.getCommandData();
             // Associate the command's name to the slash command object
-            this.commands.put(commandData.getName(), slashCommand);
+            commands.put(commandData.getName(), slashCommand);
         }
     }
 
